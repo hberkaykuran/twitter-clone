@@ -1,11 +1,22 @@
-import { PhotoIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { CalendarIcon, ChartBarIcon, FaceSmileIcon, PhotoIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState, useRef } from "react";
+import 'emoji-mart/css/emoji-mart.css';
+import {Picker}from 'emoji-mart'
 
 export default function Input() {
   const [input, setInput] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
+  const [showEmojis, setShowEmojis] = useState(false);
   const filePickerReference = useRef(null);
   const addImageToPost = () => {};
+  const addEmoji = (e) => {
+    let symbol = e.unified.split("-");
+    let codesArray = [];
+    symbol.forEach((b) => codesArray.push("0x" + b));
+    let emoji = String.fromCodePoint(...codesArray);
+    setInput(input + emoji);
+  };
+  const sendPost = () =>{};
   return (
     <div
       className={`border-b border-gray-700 p-3 flex space-x-3 overflow-y-scroll`}
@@ -47,7 +58,36 @@ export default function Input() {
                     <PhotoIcon className="h-[22px] text-[#1d9bf0]"/>
                     <input type="file" hidden onChange={addImageToPost} ref={filePickerReference}/>
                 </div>
+
+                <div className="icon rotate-90">
+                <ChartBarIcon className="text-[#1d9bf0] h-[22px]" />
+                </div>
+
+                <div className="icon" onClick={() =>setShowEmojis(!showEmojis)}>
+                    <FaceSmileIcon className="text-[#1d9bf0] h-[22px]" />
+                </div>
+
+                <div className="icon">
+                    <CalendarIcon className="text-[#1d9bf0] h-[22px]" />
+                </div>
+                {showEmojis && (
+                    <Picker onSelect={addEmoji}
+                      style={{
+                        position:"absolute",
+                        marginTop: "465px",
+                        marginLeft: -40,
+                        maxWidth: "320px",
+                        borderRadius: "20px",
+                      }}
+                      theme="dark"
+                      />
+                )}
             </div>
+            <button className="bg-[#1d9bf0] text-[#d9d9d9] rounded-full px-4 py-1.5 font-bold shadow-md hover:bg[#1a8cd8] disabled:hover:bg-[#1d9bf0] disabled:opacity-50 disabled:cursor-default"
+            disabled={!input.trim() && !selectedFile}
+            onClick={sendPost}>
+              Tweet
+            </button>
         </div>
       </div>
     </div>
