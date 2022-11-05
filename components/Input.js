@@ -7,7 +7,9 @@ export default function Input() {
   const [input, setInput] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [showEmojis, setShowEmojis] = useState(false);
+
   const filePickerReference = useRef(null);
+
   const addImageToPost = () => {};
   const addEmoji = (e) => {
     let symbol = e.unified.split("-");
@@ -17,6 +19,7 @@ export default function Input() {
     setInput(input + emoji);
   };
   const sendPost = () =>{};
+
   return (
     <div
       className={`border-b border-gray-700 p-3 flex space-x-3 overflow-y-scroll`}
@@ -27,7 +30,7 @@ export default function Input() {
         className="h-11 w-11 rounded-full cursor-pointer"
       />
       <div className="w-full divide-y divide-gray-700">
-        <div className={``}>
+        <div className={`${selectedFile && "pb-7"} ${input && "space-y-2.5"}`}>
           <textarea
             value={input}
             rows="2"
