@@ -1,9 +1,11 @@
-import { XMarkIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { PhotoIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useState, useRef } from "react";
 
 export default function Input() {
   const [input, setInput] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
+  const filePickerReference = useRef(null);
+  const addImageToPost = () => {};
   return (
     <div
       className={`border-b border-gray-700 p-3 flex space-x-3 overflow-y-scroll`}
@@ -37,6 +39,15 @@ export default function Input() {
               </div>
             </div>
           )}
+        </div>
+
+        <div className="flex items-center justify-between pt-2.5">
+            <div className="flex items-center">
+                <div className="icon" onClick={() => filePickerReference.current.click()}>
+                    <PhotoIcon className="h-[22px] text-[#1d9bf0]"/>
+                    <input type="file" hidden onChange={addImageToPost} ref={filePickerReference}/>
+                </div>
+            </div>
         </div>
       </div>
     </div>
