@@ -1,5 +1,6 @@
 import {
   ArrowsRightLeftIcon,
+  ChatBubbleBottomCenterIcon,
   ChatBubbleLeftIcon,
   EllipsisHorizontalIcon,
   HeartIcon,
@@ -142,7 +143,7 @@ export default function Post({ id, post, postPage }) {
             }}
           >
             <div className="icon group-hover:bg-[#1d9bf0] group-hover:bg-opacity-10">
-              <ChatBubbleLeftIcon className="h-5 group-hover:text-[#1d9bf0]" />
+              <ChatBubbleBottomCenterIcon className="h-5 group-hover:text-[#1d9bf0]" />
             </div>
             {comments.length > 0 && (
               <span className="group-hover:text-[#1d9bf0] text-sm">
