@@ -1,5 +1,5 @@
 import { initializeApp, getApp, getApps } from "firebase/app";
-import { getFirestorage } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -10,12 +10,12 @@ const firebaseConfig = {
   storageBucket: "twitter-clone-hberkaykuran.appspot.com",
   messagingSenderId: "86458938708",
   appId: "1:86458938708:web:e434e7d3eb60afa1ae44c1",
-  measurementId: "G-V4RY6HPDB0"
+  measurementId: "G-V4RY6HPDB0",
 };
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const db = getFirestorage();
+const db = getFirestore();
 const storage = getStorage();
 
 export default app;
-export {db,storage};
+export { db, storage };

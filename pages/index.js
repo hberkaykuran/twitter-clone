@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import Feed from '../components/Feed';
-import Sidebar from '../components/Sidebar';
+import Head from "next/head";
+import Feed from "../components/Feed";
+import Sidebar from "../components/Sidebar";
 
 export default function Home() {
   return (
