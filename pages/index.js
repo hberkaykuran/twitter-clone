@@ -32,14 +32,14 @@ export async function getServerSideProps(context) {
     (res) => res.json()
   );
   const providers = await getProviders();
-  const sesion = await getSession(context);
+  const session = await getSession(context);
 
   return {
     props: {
       trendingResults,
       followResults,
       providers,
-      sesion,
+      session,
     },
   };
 }

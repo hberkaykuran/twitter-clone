@@ -17,14 +17,15 @@ import {
 } from "firebase/firestore";
 import { db, storage } from "../firebase";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
+import { useSession } from "next-auth/react";
 
 export default function Input() {
   const [input, setInput] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [showEmojis, setShowEmojis] = useState(false);
   const [loading, setLoading] = useState(false);
-
   const filePickerReference = useRef(null);
+  const { data: session } = useSession();
   const addImageToPost = (e) => {
     const reader = new FileReader();
     if (e.target.files[0]) {
@@ -46,10 +47,10 @@ export default function Input() {
     if (loading) return;
     setLoading(true);
     const docRef = await addDoc(collection(db, "posts"), {
-      // id: session.user.uid,
-      // username: session.user.name,
-      // userImg: session.user.image,
-      // tag: session.user.tag,
+      id: session.user.uid,
+      username: session.user.name,
+      userImg: session.user.image,
+      tag: session.user.tag,
       text: input,
       timestamp: serverTimestamp(),
     });
@@ -74,7 +75,7 @@ export default function Input() {
       className={`border-b border-gray-700 p-3 flex space-x-3 overflow-y-scroll`}
     >
       <img
-        src="https://yt3.ggpht.com/ytc/AMLnZu8LG8qD3FhUFJayl6xP6ZUFj3RI3hVd-QqD94uYZ0nAn6kc4QyLroAPhX1JqcHE=s88-c-k-c0x00ffffff-no-rj-mo"
+        src={session.user.image}
         alt=""
         className="h-11 w-11 rounded-full cursor-pointer"
       />
