@@ -24,8 +24,8 @@ export default function Trending({ result }) {
           src={result.img}
           width={70}
           height={70}
-          objectFit="cover"
-          className="rounded-2xl"
+          alt=""
+          className="rounded-2xl object-contain"
         />
       ) : (
         <div className="icon group">
