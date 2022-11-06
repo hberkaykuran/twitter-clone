@@ -71,7 +71,7 @@ export default function Post({ id, post, postPage }) {
 
   return (
     <div
-      className="p-3 flex cursor-pointer border-b border-gray-700"
+      className="p-3 flex cursor-pointer border-b border-gray-700 hover:bg-white hover:bg-opacity-[0.04] transition ease-in-out"
       onClick={() => router.push(`/${id}`)}
     >
       {!postPage && (
