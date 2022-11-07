@@ -18,19 +18,21 @@ export default function Home({ trendingResults, followResults, providers }) {
         <title>Twitter Clone</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="bg-black min-h-screen flex flex-grow max-w-[1500px] mx-auto">
+      <div className="bg-black min-h-screen flex mx-auto">
         <header
           role="banner"
           className="flex flex-row justify-end xl:min-w-[299px] sm:min-w-[80px] flex-grow"
         >
           <Sidebar />
         </header>
-        <main className="w-[999px] flex-shrink flex justify-between flex-grow">
-          <Feed />
-          <Widgets
-            trendingResults={trendingResults}
-            followResults={followResults}
-          />
+        <main role="main" className="flex flex-start flex-grow">
+          <div className="w-[999px] flex justify-between ">
+            <Feed />
+            <Widgets
+              trendingResults={trendingResults}
+              followResults={followResults}
+            />
+          </div>
         </main>
 
         {isOpen && <Modal />}
