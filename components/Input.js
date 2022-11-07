@@ -72,19 +72,19 @@ export default function Input() {
 
   return (
     <div
-      className={`border-b border-gray-700 p-3 flex space-x-3 overflow-y-scroll`}
+      className={`border-b border-gray-700 p-3 flex space-x-3 overflow-y-none`}
     >
       <img
         src={session.user.image}
         alt=""
         className="h-11 w-11 rounded-full cursor-pointer"
       />
-      <div className="w-full divide-y divide-gray-700">
+      <div className="w-full divide-gray-700 focus-within:divide-y">
         <div className={`${selectedFile && "pb-7"} ${input && "space-y-2.5"}`}>
           <textarea
             value={input}
             rows="2"
-            className="bg-transparent outline-none text-[#d9d9d9] text-lg placeholder-gray-500 tracking-wide w-full min-h-[50px]"
+            className="bg-transparent outline-none text-[#d9d9d9] text-lg placeholder-gray-500 tracking-wide w-full min-h-[50px] "
             placeholder="What's happening?"
             onChange={(e) => setInput(e.target.value)}
           />

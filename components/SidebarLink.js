@@ -5,7 +5,7 @@ export default function SidebarLink({ Icon, text, active }) {
         active && "font-bold"
       }`}
     >
-      <Icon className="h-7 text-white" />
+      <Icon className="h-[26px] text-white" />
       <span className="hidden xl:inline">{text}</span>
     </div>
   );
