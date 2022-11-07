@@ -72,7 +72,7 @@ export default function PostPage({
         <main role="main" className="flex flex-start flex-grow">
           <div className="w-[999px]  flex justify-between">
             <div className="flex-grow border-l border-r border-gray-700 max-w-[600px]">
-              <div className="flex itemcs-center px-1.5 py-2 border-b border-gray-700 text-[#d9d9d9] text-semibold text-xl gap-x-4 sticky top-0 z-50 bg-black">
+              <div className="flex itemcs-center px-1.5 py-2 text-[#d9d9d9] text-semibold text-xl gap-x-4 sticky top-0 z-50 bg-black">
                 <div
                   className="hoverAnimation w-9 h-9 flex items-center justify-center xl:px-0"
                   onClick={() => router.push("/")}
