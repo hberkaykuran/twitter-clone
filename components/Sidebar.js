@@ -18,13 +18,13 @@ import { signOut, useSession } from "next-auth/react";
 function Sidebar() {
   const { data: session } = useSession();
   return (
-    <div className="flex flex-row justify-end xl:w-[340px] min-w-[70px] flex-grow">
-      <div className="hidden sm:flex flex-col items-center xl:items-start p-2 fixed h-full">
-        <div>
+    <div className="flex flex-row justify-end xl:min-w-[299px] sm:min-w-[80px] flex-grow">
+      <div className="hidden sm:flex flex-col items-center xl:items-start fixed h-full sm:px-3 sm:justify-between xl:w-[275px]">
+        <div className="w-full">
           <div className="flex items-center justify-center w-14 h-14 hoverAnimation p-0">
             <Image src="https://rb.gy/ogau5a" width={30} height={30} />
           </div>
-          <div className="space-y-2.5 mt-4 mb-2.5">
+          <div className="space-y-1">
             <SidebarLink text="Home" Icon={HomeIcon} active />
             <SidebarLink text="Explore" Icon={HashtagIcon} />
             <SidebarLink text="Notifications" Icon={BellIcon} />
@@ -35,14 +35,14 @@ function Sidebar() {
             <SidebarLink text="More" Icon={EllipsisHorizontalCircleIcon} />
           </div>
           <button
-            className="hidden xl:inline rounded-full w-56 h-[52px] 
-            text-lg font-bold shadow-md bg-[#1d9bf0] text-[#d9d9d9] hover:bg-[#1a8cd8]"
+            className="hidden xl:inline rounded-full w-full h-[52px] 
+            text-lg font-bold shadow-md bg-[#1d9bf0] text-[#d9d9d9] hover:bg-[#1a8cd8] my-4"
           >
             Tweet
           </button>
           <button
             className="flex xl:hidden rounded-full w-[52px] h-[52px] 
-            text-lg font-bold shadow-md bg-[#1d9bf0] text-[#d9d9d9] hover:bg-[#1a8cd8] justify-center items-center"
+            text-lg font-bold shadow-md bg-[#1d9bf0] text-[#d9d9d9] hover:bg-[#1a8cd8] justify-center items-center my-4"
           >
             <div>
               <PlusIcon className="h-4 absolute" />
@@ -51,7 +51,7 @@ function Sidebar() {
           </button>
         </div>
         <div
-          className="text-[#d9d9d9] flex items-center justify-center hoverAnimation mt-auto"
+          className="text-[#d9d9d9] flex items-center justify-center hoverAnimation my-3 flex-end w-full"
           onClick={signOut}
         >
           <img
@@ -63,7 +63,7 @@ function Sidebar() {
             <h4 className="font-bold">{session.user.name}</h4>
             <p className="text-[#6e767d]">@{session.user.tag}</p>
           </div>
-          <EllipsisHorizontalIcon className="h-6 hidden xl:inline ml-10" />
+          <EllipsisHorizontalIcon className="h-6 hidden xl:inline flex-grow" />
         </div>
       </div>
     </div>
