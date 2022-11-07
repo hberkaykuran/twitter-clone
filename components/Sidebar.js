@@ -10,6 +10,8 @@ import {
   UserIcon,
   EllipsisHorizontalCircleIcon,
   EllipsisHorizontalIcon,
+  PencilIcon,
+  PlusIcon,
 } from "@heroicons/react/24/outline";
 import { signOut, useSession } from "next-auth/react";
 
@@ -37,6 +39,15 @@ function Sidebar() {
             text-lg font-bold shadow-md bg-[#1d9bf0] text-[#d9d9d9] hover:bg-[#1a8cd8]"
           >
             Tweet
+          </button>
+          <button
+            className="flex xl:hidden rounded-full w-[52px] h-[52px] 
+            text-lg font-bold shadow-md bg-[#1d9bf0] text-[#d9d9d9] hover:bg-[#1a8cd8] justify-center items-center"
+          >
+            <div>
+              <PlusIcon className="h-4 absolute" />
+              <PencilIcon className="h-5 pl-2 mt-1" />
+            </div>
           </button>
         </div>
         <div
