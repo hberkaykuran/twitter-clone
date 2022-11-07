@@ -21,11 +21,11 @@ export default function Home({ trendingResults, followResults, providers }) {
       <div className="bg-black min-h-screen flex mx-auto">
         <header
           role="banner"
-          className="flex flex-row justify-end xl:min-w-[299px] sm:min-w-[80px] flex-grow"
+          className="flex flex-row justify-end xl:min-w-[299px] sm:min-w-[80px] flex-grow-[1.2]"
         >
           <Sidebar />
         </header>
-        <main role="main" className="flex flex-start flex-grow">
+        <main role="main" className="flex flex-start flex-grow-[1]">
           <div className="w-[999px] flex justify-between ">
             <Feed />
             <Widgets
