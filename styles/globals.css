@@ -19,4 +19,8 @@
   .tag {
     @apply text-[#1d9bf0] font-normal hover:underline cursor-pointer
   }
+  .tooltip{
+    @apply fixed h-5 bg-gray-700 text-[#d9d9d9] px-1 text-center rounded-sm mt-16 text-xs font-bold group-hover:transition-opacity group-hover:opacity-100 opacity-0 delay-500 transition-none
+  }
+  
 }

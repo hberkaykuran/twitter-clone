@@ -23,8 +23,9 @@ export default function Feed() {
     <div className="text-[#d9d9d9] flex-grow border-l border-r border-gray-700 max-w-[600px]">
       <div className="text-[#d9d9d9] flex items-center sm:justify-between py-2 px-3 sticky top-0 z-50 bg-black">
         <h2 className="text-lg sm:text-xl font-bold">Home</h2>
-        <div className="hoverAnimation w-9 h-9 flex items-center justify-center xl:px-0 ml-auto">
+        <div className="hoverAnimation w-9 h-9 flex items-center justify-center xl:px-0 ml-auto group">
           <SparklesIcon className="h-5 text-[#d9d9d9]" />
+          <span className="tooltip">Top Tweets</span>
         </div>
       </div>
       <Input />

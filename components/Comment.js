@@ -9,7 +9,7 @@ import Moment from "react-moment";
 
 export default function Comment({ id, comment }) {
   return (
-    <div className="p-3 flex cursor-pointer border-b border-gray-700">
+    <div className="p-3 flex cursor-pointer border-b border-gray-700 hover:bg-white hover:bg-opacity-[0.04] transition ease-in-out">
       <img
         src={comment?.userImg}
         alt=""

@@ -108,7 +108,7 @@ export default function Input() {
           <div className="flex items-center justify-between pt-2.5">
             <div className="flex items-center">
               <div
-                className="icon"
+                className="icon group"
                 onClick={() => filePickerReference.current.click()}
               >
                 <PhotoIcon className="h-[22px] text-[#1d9bf0]" />
@@ -118,18 +118,25 @@ export default function Input() {
                   onChange={addImageToPost}
                   ref={filePickerReference}
                 />
+                <span className="tooltip">Media</span>
               </div>
 
-              <div className="icon rotate-90">
-                <ChartBarIcon className="text-[#1d9bf0] h-[22px]" />
+              <div className="icon group">
+                <ChartBarIcon className="text-[#1d9bf0] h-[22px] rotate-90" />
+                <span className="tooltip">Poll</span>
               </div>
 
-              <div className="icon" onClick={() => setShowEmojis(!showEmojis)}>
+              <div
+                className="icon group"
+                onClick={() => setShowEmojis(!showEmojis)}
+              >
                 <FaceSmileIcon className="text-[#1d9bf0] h-[22px]" />
+                <span className="tooltip">Emoji</span>
               </div>
 
-              <div className="icon">
+              <div className="icon group">
                 <CalendarIcon className="text-[#1d9bf0] h-[22px]" />
+                <span className="tooltip">Schedule</span>
               </div>
               {showEmojis && (
                 <Picker
