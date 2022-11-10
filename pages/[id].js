@@ -65,7 +65,7 @@ export default function PostPage({
       <div className="bg-black min-h-screen flex mx-auto">
         <header
           role="banner"
-          className="flex flex-row justify-end xl:min-w-[299px] sm:min-w-[80px] flex-grow-[1.2]"
+          className="flex flex-row justify-end xl:min-w-[299px] sm:min-w-[80px] flex-grow-[2]"
         >
           <Sidebar />
         </header>
