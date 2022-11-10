@@ -16,10 +16,11 @@ import {
 } from "firebase/firestore";
 import { db, storage } from "../firebase";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
-import { useSession } from "next-auth/react";
+import { getProviders, getSession, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import Login from "../components/Login";
 
-export default function Tweet() {
+export default function Tweet({ providers }) {
   const [input, setInput] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -65,6 +66,9 @@ export default function Tweet() {
     setInput("");
     setSelectedFile(null);
   };
+
+  if (!session) return <Login providers={providers} />;
+
   return (
     <div className={`overflow-y-none`}>
       <div className="flex flex-row justify-between items-center py-5 px-4">
@@ -149,4 +153,24 @@ export default function Tweet() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const trendingResults = await fetch("https://www.jsonkeeper.com/b/NKEV").then(
+    (res) => res.json()
+  );
+  const followResults = await fetch("https://www.jsonkeeper.com/b/WWMJ").then(
+    (res) => res.json()
+  );
+  const providers = await getProviders();
+  const session = await getSession(context);
+
+  return {
+    props: {
+      trendingResults,
+      followResults,
+      providers,
+      session,
+    },
+  };
 }
