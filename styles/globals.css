@@ -24,3 +24,9 @@
   }
   
 }
+
+@layer utilities {
+  .pbSafe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}

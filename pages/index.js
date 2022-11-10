@@ -7,6 +7,7 @@ import { getProviders, getSession, useSession } from "next-auth/react";
 import { useRecoilState } from "recoil";
 import { modalState } from "../atom/modalAtom";
 import Widgets from "../components/Widgets";
+import Bottombar from "../components/Bottombar";
 
 export default function Home({ trendingResults, followResults, providers }) {
   const { data: session } = useSession();
@@ -17,6 +18,10 @@ export default function Home({ trendingResults, followResults, providers }) {
       <Head>
         <title>Twitter Clone</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        ></meta>
       </Head>
       <div className="bg-black min-h-screen flex mx-auto">
         <header
@@ -26,12 +31,13 @@ export default function Home({ trendingResults, followResults, providers }) {
           <Sidebar />
         </header>
         <main role="main" className="flex flex-start flex-grow-[1]">
-          <div className="w-[999px] flex justify-between ">
+          <div className="w-full sm:w-[999px] flex justify-between ">
             <Feed />
             <Widgets
               trendingResults={trendingResults}
               followResults={followResults}
             />
+            <Bottombar />
           </div>
         </main>
 

@@ -71,9 +71,7 @@ export default function Input() {
   };
 
   return (
-    <div
-      className={`border-b border-gray-700 p-3 flex space-x-3 overflow-y-none`}
-    >
+    <div className={`p-3 hidden sm:flex space-x-3 overflow-y-none `}>
       <img
         src={session.user.image}
         alt=""
