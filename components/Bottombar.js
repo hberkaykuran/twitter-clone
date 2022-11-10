@@ -15,7 +15,7 @@ function Bottombar() {
       <div className="flex flex-row justify-end items-end w-full h-max-[16vh] h-14">
         <button
           className="flex xl:hidden rounded-full w-[52px] h-[52px] 
-            text-lg font-bold shadow-md bg-[#1d9bf0] text-[#d9d9d9] hover:bg-[#1a8cd8] justify-center items-center relative bottom-5 right-5"
+            text-lg font-bold shadow-md bg-[#1d9bf0] text-[#d9d9d9] hover:bg-[#1a8cd8] justify-center items-center relative bottom-5 right-5 hoverAnimation"
           onClick={() => router.push("/tweet")}
         >
           <div>
@@ -26,10 +26,18 @@ function Bottombar() {
       </div>
       <div className="w-full h-max-[16vh] h-14 relative pbSafe border-t  border-gray-700 bg-black">
         <div className="flex flex-row items-center justify-center h-full">
-          <HomeIcon className="h-7 text-white flex-grow" />
-          <MagnifyingGlassIcon className="h-7 text-white flex-grow" />
-          <BellIcon className="h-7 text-white flex-grow" />
-          <InboxIcon className="h-7 text-white flex-grow" />
+          <div className="flex flex-grow items-center justify-center">
+            <HomeIcon className="h-7 text-white hoverAnimation" />
+          </div>
+          <div className="flex flex-grow items-center justify-center">
+            <MagnifyingGlassIcon className="h-7 text-white hoverAnimation" />
+          </div>
+          <div className="flex flex-grow items-center justify-center">
+            <BellIcon className="h-7 text-white hoverAnimation" />
+          </div>
+          <div className="flex flex-grow items-center justify-center">
+            <InboxIcon className="h-7 text-white hoverAnimation" />
+          </div>
         </div>
       </div>
     </div>

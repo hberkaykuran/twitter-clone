@@ -71,11 +71,16 @@ export default function Tweet({ providers }) {
 
   return (
     <div className={`overflow-y-none`}>
-      <div className="flex flex-row justify-between items-center py-5 px-4">
-        <ArrowLeftIcon
-          className="text-white h-4 icon"
-          onClick={() => router.push("/")}
-        />
+      <div className="flex flex-row justify-between items-center h-[53px] px-4">
+        <div className=" items-center flex justify-start -ml-2">
+          <div className="hoverAnimation items-center flex flex-col justify-center h-8 w-8 flex-grow">
+            <ArrowLeftIcon
+              className="text-white h-4 "
+              onClick={() => router.push("/")}
+            />
+          </div>
+        </div>
+        <div className="flex-grow"></div>
         <button
           className="bg-[#1d9bf0] text-[#d9d9d9] rounded-full px-4 py-1.5 font-bold shadow-md hover:bg[#1a8cd8] disabled:hover:bg-[#1d9bf0] disabled:opacity-50 disabled:cursor-default"
           disabled={!input.trim() && !selectedFile}
