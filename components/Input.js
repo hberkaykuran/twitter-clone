@@ -81,6 +81,7 @@ export default function Input() {
         <div className={`${selectedFile && "pb-7"} ${input && "space-y-2.5"}`}>
           <textarea
             value={input}
+            maxLength="240"
             rows="2"
             className="bg-transparent outline-none text-[#d9d9d9] text-lg placeholder-gray-500 tracking-wide w-full min-h-[50px] "
             placeholder="What's happening?"

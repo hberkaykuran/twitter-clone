@@ -104,6 +104,7 @@ export default function Tweet({ providers }) {
           >
             <textarea
               value={input}
+              maxLength="240"
               rows="4"
               className="bg-transparent outline-none text-[#d9d9d9] text-lg placeholder-gray-500 tracking-wide w-full min-h-[50px] "
               placeholder="What's happening?"

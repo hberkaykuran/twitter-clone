@@ -30,7 +30,7 @@ export default function Comment({ id, comment }) {
             <span className="hover:underline text-sm sm:text-[15px]">
               <Moment fromNow>{comment?.timestamp?.toDate()}</Moment>
             </span>
-            <p className="text-[#d9d9d9] mt-0.5 max-w-lg text-[15px] sm:text-base overflow-none">
+            <p className="text-[#d9d9d9] mt-0.5 max-w-lg text-[15px] sm:text-base overflow-none whitespace-pre-line">
               {comment?.comment}
             </p>
           </div>

@@ -5,7 +5,7 @@
 @layer base {
   body {
     @apply bg-black
-  }
+  }  
 }
 
 @layer components {
@@ -24,11 +24,11 @@
   .tooltip{
     @apply fixed h-5 bg-gray-700 text-[#d9d9d9] px-1 text-center rounded-sm mt-16 text-xs font-bold group-hover:transition-opacity group-hover:opacity-100 opacity-0 delay-500 transition-none
   }
-  
+
 }
 
 @layer utilities {
   .pbSafe {
     padding-bottom: env(safe-area-inset-bottom);
-  }
+  } 
 }
