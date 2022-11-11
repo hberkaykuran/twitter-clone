@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { modalState } from "../atom/modalAtom";
+import Bottombar from "../components/Bottombar";
 import Comment from "../components/Comment";
 import Login from "../components/Login";
 import Modal from "../components/Modal";
@@ -98,6 +99,7 @@ export default function PostPage({
               trendingResults={trendingResults}
               followResults={followResults}
             />
+            <Bottombar postPage={true} />
           </div>
         </main>
         {isOpen && <Modal />}
