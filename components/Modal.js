@@ -20,7 +20,6 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase";
 import Moment from "react-moment";
-import { async } from "@firebase/util";
 
 function Modal() {
   const { data: session } = useSession();
